@@ -2,6 +2,7 @@ Scope & Methodology
 
 This part of the project focuses on evaluating the security posture of the OWASP Juice Shop application. My role in the group was specifically the web application testing portion, so all the work in this section reflects the tests I personally carried out using Kali Linux and Windows as needed.
 
+
 2.1 Scope of Testing
 
 The scope included the following:
@@ -26,6 +27,8 @@ The scope included the following:
 
 4. Anything impacting other machines on the network (only my local isolated setup was used)
 
+
+
 2.2 Testing Approach & Methodology
 
 I followed a fairly standard workflow similar to what you’d see in a junior penetration testing engagement. Here's the high‑level process I used:
@@ -39,72 +42,80 @@ This helped me identify any parts of the app worth targeting with tools later, l
 
 Once the basic layout was clear, I used the following tools:
 
-OWASP ZAP (Kali) – Passive and active scanning to detect common issues (XSS, IDOR, security misconfigurations).
+1. OWASP ZAP (Kali) – Passive and active scanning to detect common issues (XSS, IDOR, security misconfigurations).
 
-Nikto – To quickly check for server misconfigurations or outdated components.
+2. Nikto – To quickly check for server misconfigurations or outdated components.
 
-Burp Suite Community – Mainly for intercepting requests, modifying parameters, and understanding how the backend responds.
+3. Burp Suite Community – Mainly for intercepting requests, modifying parameters, and understanding how the backend responds.
 
 The automated scans helped highlight a list of potential vulnerabilities that I later confirmed manually.
+
+
 
 3. Manual Testing & Exploitation
 
 Using the results from the tools as a starting point, I manually attempted:
 
-Broken Authentication tests
+1. Broken Authentication tests
 
-Parameter tampering
+2. Parameter tampering
 
-SQL injection attempts
+3. SQL injection attempts
 
-Unvalidated redirect tests
+4. Unvalidated redirect tests
 
-API endpoint manipulation
+5. API endpoint manipulation
 
-Business logic flaws
+6. Business logic flaws
 
-Reviewing JSON responses and hidden API paths
+7. Reviewing JSON responses and hidden API paths
 
 The Juice Shop challenges were extremely helpful for confirming that my exploitation attempts actually worked. Each challenge pop‑up essentially validated my proof‑of‑concept attempts.
+
+
 
 4. Documentation & Evidence Capture
 
 Throughout the process, I took screenshots of:
 
-Tool scans
+1. Tool scans
 
-Raw requests/responses
+2. Raw requests/responses
 
-Successful exploit results
+3. Successful exploit results
 
-Challenge completion pop‑ups
+4. Challenge completion pop‑ups
 
 Any sensitive information I managed to access
 
 All screenshots are included inside each vulnerability write‑up and stored neatly in the /evidence/ folder for organized version control.
 
+
+
 2.3 Tools Used
 
-Kali Linux
+1. Kali Linux
 
-OWASP ZAP
+2. OWASP ZAP
 
-Burp Suite Community Edition
+3. Burp Suite Community Edition
 
-Nikto
+4. Nikto
 
-Curl (for direct requests)
+5. Curl (for direct requests)
 
-Windows 10 (hosting Juice Shop instance)
+6. Windows 10 (hosting Juice Shop instance)
+
+
 
 2.4 Deliverables From My Part
 
 As the student responsible for the Web Application portion, my final deliverables include:
 
-Web Application Vulnerability Report (.md + screenshots)
+1. Web Application Vulnerability Report (.md + screenshots)
 
-5+ Confirmed vulnerabilities with PoC evidence
+2. 5+ Confirmed vulnerabilities with PoC evidence
 
-ZAP and Nikto scan outputs
+3. ZAP and Nikto scan outputs
 
-Clean GitHub repository for the group to add to later
+4. Clean GitHub repository for the group to add to later
