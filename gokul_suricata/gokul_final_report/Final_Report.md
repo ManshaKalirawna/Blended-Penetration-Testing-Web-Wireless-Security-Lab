@@ -158,9 +158,28 @@ Note: Risk levels were determined based on impact on confidentiality, integrity,
 3. Risk levels are relative to the Juice Shop instance running in a controlled, lab environment.
 
 ## 4. Wireless & Hardware Testing (Mansha)
-[Placeholder — pending Mansha’s submission]
+4.1 SQL Injection (High Severity) Overview
 
----
+During testing, I found that several user-input fields—particularly the search bar and the login form—did not properly validate or sanitize user-supplied data. This allowed me to inject SQL queries into the backend database.
+
+Testing Steps
+
+Navigated to the login page.
+2 Entered a basic SQL payload into the username field:
+
+' OR '1'='1
+
+Submitted the login form without providing a valid password.
+
+The application responded with a successful authentication message.
+
+Impact
+
+Bypassing authentication without valid credentials
+
+Possible exposure of user account data
+
+Risk of full database compromise
 
 ## 5. Detection & Suricata Rule Implementation (Gokulhesh)
 
