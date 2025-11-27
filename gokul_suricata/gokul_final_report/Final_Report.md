@@ -262,6 +262,30 @@ Information disclosure increases attack surface
 
 Could help attackers craft further attacks
 
+<img width="1175" height="645" alt="image" src="https://github.com/user-attachments/assets/dbec7ddb-c1c7-4e02-8791-1573faacca3b" />
+4.6 Input Validation Issues (Low Severity) Overview
+
+During testing, I observed that several input fields, particularly the search bar, accepted unusual and unexpected characters without proper validation. While the application correctly displayed "No results found" when the input did not match any products, it still echoed the entire user input on the page. This behavior indicates weak input validation.
+
+Testing Steps
+
+Navigated to the search bar on the Juice Shop main page.
+
+Entered a mixture of special characters, symbols, and a long string:
+
+!@#$%^&*()_+{}[]:";'<>?/AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+Pressed Enter to submit the search.
+
+Observed that the page displayed "No results found," but the exact input was printed on the page in bold.
+
+Impact
+
+Shows that the application does not properly validate user input.
+
+Could increase the likelihood of future injection or XSS vulnerabilities if other parts of the application use this input unsafely.
+
+Demonstrates a minor security misconfiguration in input handling.<img width="1909" height="1001" alt="image" src="https://github.com/user-attachments/assets/43879258-3db4-4b07-be82-363712c72cf1" />
 
 ## 5. Detection & Suricata Rule Implementation (Gokulhesh)
 
