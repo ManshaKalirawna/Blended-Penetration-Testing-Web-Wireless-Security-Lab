@@ -241,6 +241,27 @@ Users can be redirected to malicious sites
 
 Could be used in phishing attacks
 
+Evidence
+
+<img width="1915" height="1030" alt="image" src="https://github.com/user-attachments/assets/b59a965d-2a47-4992-b7c0-18027908c5dd" />
+
+<img width="1885" height="1019" alt="image" src="https://github.com/user-attachments/assets/1634d558-37ba-4c6b-b096-6feadc719028" />
+4.5 Security Misconfiguration – Exposed API / Debug Info (Medium Severity) Overview
+
+Accessible directories and endpoints exposed information about the application and products without authentication.
+
+Testing Steps
+
+Used manual exploration of /api/products and /debug/ endpoints
+
+Observed sensitive information returned in JSON format
+
+Impact
+
+Information disclosure increases attack surface
+
+Could help attackers craft further attacks
+
 
 ## 5. Detection & Suricata Rule Implementation (Gokulhesh)
 
