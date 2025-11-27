@@ -293,13 +293,21 @@ Demonstrates a minor security misconfiguration in input handling.<img width="190
 
 ## 6. Detection & Suricata Rule Implementation (Gokulhesh)
 ### 6.1 Overview
-This section describes the custom detection rules created to monitor critical web attacks inside the Juice Shop application.
 
-### 6.2 Summary of Implemented Rules
-- SQL Injection detection  
-- XSS detection  
-- Brute-force login detection  
-- Unauthorized admin page access detection  
+This section documents the custom Suricata IDS rules created to detect the major attacks performed against the OWASP Juice Shop application. The purpose of these rules is to monitor and alert on suspicious HTTP traffic such as SQL injection, XSS attacks, brute-force login attempts, and unauthorized access to administrative pages.
+
+All rules were tested using Suricata on Kali Linux, and alerts were verified in Eve.json, fast.log, and Suricata’s real-time console output.
+
+### 6.2 Custom Detection Rules
+alert http any any -> any any (
+    msg:"SQL Injection Attempt Detected";
+    content:"' OR 1=1";
+    nocase;
+    sid:1000001;
+    rev:1;
+)
+What it detects:
+Alerts when JavaScript tags such as <script>alert('XSS')</script> appear in HTTP traffic. 
 
 ### 6.3 Evidence Screenshots
 (To be added after testing the rules)
