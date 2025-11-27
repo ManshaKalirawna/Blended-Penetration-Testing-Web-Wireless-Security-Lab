@@ -180,6 +180,25 @@ Bypassing authentication without valid credentials
 Possible exposure of user account data
 
 Risk of full database compromise
+<img width="1285" height="763" alt="image" src="https://github.com/user-attachments/assets/e888c519-7a30-4a73-870d-1909ceee70ed" />
+<img width="1279" height="769" alt="image" src="https://github.com/user-attachments/assets/02a91263-7d4a-4df0-8489-eb23f20cccbe" />
+4.2 Broken Authentication – Weak Default Password (High Severity) Overview
+
+The administrator account still used its default credentials. I could log in as the admin using these default passwords.
+
+Testing Steps
+
+Navigated to the admin login page.
+
+Entered default username/password combinations.
+
+The application displayed a pop-up confirming successful admin login.
+
+Impact
+
+Full system compromise possible
+
+Administrative access exposes all sensitive data
 
 ## 5. Detection & Suricata Rule Implementation (Gokulhesh)
 
