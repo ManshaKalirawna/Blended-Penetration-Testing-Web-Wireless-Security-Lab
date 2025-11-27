@@ -180,7 +180,9 @@ Bypassing authentication without valid credentials
 Possible exposure of user account data
 
 Risk of full database compromise
+
 <img width="1285" height="763" alt="image" src="https://github.com/user-attachments/assets/e888c519-7a30-4a73-870d-1909ceee70ed" />
+
 <img width="1279" height="769" alt="image" src="https://github.com/user-attachments/assets/02a91263-7d4a-4df0-8489-eb23f20cccbe" />
 4.2 Broken Authentication – Weak Default Password (High Severity) Overview
 
@@ -199,6 +201,30 @@ Impact
 Full system compromise possible
 
 Administrative access exposes all sensitive data
+
+<img width="1267" height="779" alt="image" src="https://github.com/user-attachments/assets/5c0cd6db-d817-4edf-922c-699f05c20953" />
+
+<img width="1279" height="730" alt="image" src="https://github.com/user-attachments/assets/58cc677d-559c-4026-a128-714dc4259ecb" />
+
+4.3 Cross-Site Scripting (XSS) – Reflected (Medium Severity) Overview
+
+Reflected XSS was discovered in the search bar and other fields where input is reflected back without proper sanitization.
+
+Testing Steps
+
+Inserted this payload in a search field:
+<script>alert('XSS Test');</script>
+The alert executed immediately upon page reload.
+Impact
+
+Session hijacking
+
+Credential theft
+
+Redirection to malicious websites
+
+Evidence
+
 
 ## 5. Detection & Suricata Rule Implementation (Gokulhesh)
 
