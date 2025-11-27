@@ -224,6 +224,22 @@ Credential theft
 Redirection to malicious websites
 
 Evidence
+<img width="1279" height="790" alt="image" src="https://github.com/user-attachments/assets/52f55182-0dcc-4f46-81e8-45cf8f3bfe21" />
+4.4 Open Redirect (Medium Severity) Overview
+
+Users could be redirected to arbitrary external sites via URL parameters.
+
+Testing Steps
+
+Opened the redirect URL on the Juice Shop instance:
+http://:3000/redirect?to=https://blockchain.info/address/1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm
+
+Observed the redirect and pop-up confirming the challenge solved.
+Impact
+
+Users can be redirected to malicious sites
+
+Could be used in phishing attacks
 
 
 ## 5. Detection & Suricata Rule Implementation (Gokulhesh)
