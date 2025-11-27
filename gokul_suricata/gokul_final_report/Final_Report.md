@@ -287,7 +287,7 @@ Could increase the likelihood of future injection or XSS vulnerabilities if othe
 
 Demonstrates a minor security misconfiguration in input handling.<img width="1909" height="1001" alt="image" src="https://github.com/user-attachments/assets/43879258-3db4-4b07-be82-363712c72cf1" />
 
-## 5. Detection & Suricata Rule Implementation (Gokulhesh)
+## 5. Wireless & Hardware Testing ( Rahool)
 
 ### 5.1 Overview
 This section describes the custom detection rules created to monitor critical web attacks inside the Juice Shop application.
@@ -303,7 +303,7 @@ This section describes the custom detection rules created to monitor critical we
 
 ---
 
-## 6. Validation (Before & After Remediation)
+## 6. Detection & Suricata Rule Implementation (Gokulhesh)
 
 ### 6.1 Pre-Fix Scan Results
 (To be completed after Rahool submits vulnerabilities)
@@ -313,17 +313,19 @@ This section describes the custom detection rules created to monitor critical we
 
 ---
 
-## 7. Risk & Remediation (Nippun)
+## 7.Validation (Before & After Remediation)
 [Placeholder — waiting for Nippun’s content]
 
 ---
 
-## 8. Conclusion & Recommendations
+## 8. Risk & Remediation (Nippun)
 (To be written after all parts are merged)
 
 ---
+## 9. Conclusion & Recommendations
 
-## 9. Appendix
+(Write later)
+## 10. Appendix
 - Suricata rules  
 - Logs  
 - Screenshots  
