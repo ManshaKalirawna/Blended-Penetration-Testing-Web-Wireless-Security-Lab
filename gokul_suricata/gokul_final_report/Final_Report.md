@@ -301,15 +301,15 @@ This section describes the custom detection rules created to monitor critical we
 - Brute-force login detection  
 - Unauthorized admin page access detection  
 
-### 5.3 Evidence Screenshots
+### 6.3 Evidence Screenshots
 (To be added after testing the rules)
 
 ## 7.Validation (Before & After Remediation)
 
-### 6.1 Pre-Fix Scan Results
+### 7.1 Pre-Fix Scan Results
 (To be completed after Rahool submits vulnerabilities)
 
-### 6.2 Post-Remediation Scan Results
+### 7.2 Post-Remediation Scan Results
 (To be completed after Nippun submits remediation steps)
 
 ---
