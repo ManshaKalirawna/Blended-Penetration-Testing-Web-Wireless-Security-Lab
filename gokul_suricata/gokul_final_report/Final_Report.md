@@ -289,10 +289,13 @@ Demonstrates a minor security misconfiguration in input handling.<img width="190
 
 ## 5. Wireless & Hardware Testing ( Rahool)
 
-### 5.1 Overview
+
+
+## 6. Detection & Suricata Rule Implementation (Gokulhesh)
+### 6.1 Overview
 This section describes the custom detection rules created to monitor critical web attacks inside the Juice Shop application.
 
-### 5.2 Summary of Implemented Rules
+### 6.2 Summary of Implemented Rules
 - SQL Injection detection  
 - XSS detection  
 - Brute-force login detection  
@@ -301,20 +304,13 @@ This section describes the custom detection rules created to monitor critical we
 ### 5.3 Evidence Screenshots
 (To be added after testing the rules)
 
----
-
-## 6. Detection & Suricata Rule Implementation (Gokulhesh)
+## 7.Validation (Before & After Remediation)
 
 ### 6.1 Pre-Fix Scan Results
 (To be completed after Rahool submits vulnerabilities)
 
 ### 6.2 Post-Remediation Scan Results
 (To be completed after Nippun submits remediation steps)
-
----
-
-## 7.Validation (Before & After Remediation)
-[Placeholder — waiting for Nippun’s content]
 
 ---
 
