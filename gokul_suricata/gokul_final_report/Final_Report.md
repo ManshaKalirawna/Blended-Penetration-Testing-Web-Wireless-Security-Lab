@@ -710,33 +710,25 @@ Status: Successfully Scanned
 - Screenshots  
 - Tool versions
   ## 10.2 Tools Used
-  Web Application Testing Tools
-Tool	Version	Purpose
-OWASP ZAP	2.14.0	Automated scanning, spidering, active vulnerability detection
-Burp Suite Community Edition	2023.12	Manual interception, modifying HTTP requests, replaying attacks
-Nikto Web Scanner	2.5.0	Server misconfiguration and outdated components scanning
-Curl	7.88.1	Direct API/manual request crafting
-Mozilla Firefox	120+	Browser used for test execution
-Operating Systems
-Operating System	Version	Purpose
-Kali Linux	2024.2	Main penetration testing environment (ZAP, Burp, Nikto, Suricata)
-Windows 10 Pro	22H2	Hosted Juice Shop web application
-Detection & IDS Tools
-Tool	Version	Purpose
-Suricata IDS	7.0.0	Custom rule creation, HTTP attack detection, alert logging
-Eve.json / Fast.log Outputs	Suricata default formats	Evidence of detected attacks
-Network & Wireless Tools
-Tool	Version	Purpose
-Wireshark	4.2.0	Packet capture, ARP analysis, WPA2 handshake capture
-Aircrack-ng Suite	1.7	Wireless monitoring & handshake cracking attempts
-Monitor Mode Drivers	Default Linux drivers	For packet capture on wlan0 interface
-Hardware Security Tools
-Tool	Version	Purpose
-Flipper Zero / RFID Tool	Firmware 0.95+	HID card scanning, NFC/IR capture, replay attacks
-125 kHz HID Reader Module	Standard LF reader	Extracting FC & Card ID from low-frequency badges
-IR Transmitter Module	Built-in (Flipper)	Capturing & replaying IR remote signals
-Other Tools & Utilities
-Tool / Utility	Purpose
-VS Code / Nano	Editing Suricata rules & report files
-Git / GitHub	Version control and group collaboration
-Node.js (Juice Shop)	Running the OWASP Juice Shop environment
+ | **Category**                   | **Tool**                        | **Version**              | **Purpose**                                                      |
+| ------------------------------ | ------------------------------- | ------------------------ | ---------------------------------------------------------------- |
+| **Web Application Testing**    | OWASP ZAP                       | 2.14.0                   | Automated scanning, spidering, and detecting web vulnerabilities |
+|                                | Burp Suite Community            | 2023.12                  | Manual HTTP interception, modification, replaying attacks        |
+|                                | Nikto                           | 2.5.0                    | Detect server misconfigurations & outdated components            |
+|                                | Curl                            | 7.88.1                   | Manual API testing and custom HTTP request crafting              |
+|                                | Mozilla Firefox                 | 120+                     | Browser used for web app interaction during tests                |
+| **Operating Systems**          | Kali Linux                      | 2024.2                   | Main penetration testing environment                             |
+|                                | Windows 10 Pro                  | 22H2                     | Host OS running OWASP Juice Shop                                 |
+| **Intrusion Detection / Logs** | Suricata IDS                    | 7.0.0                    | Custom rule creation, attack detection, generating alerts        |
+|                                | Eve.json / Fast.log             | Default Suricata outputs | Log files storing IDS alerts and packet metadata                 |
+| **Network / Wireless Tools**   | Wireshark                       | 4.2.0                    | Packet capture, ARP inspection, WPA2 handshake capture           |
+|                                | Aircrack-ng Suite               | 1.7                      | Wireless monitoring, handshake cracking attempts                 |
+|                                | Linux Monitor Mode Drivers      | Default                  | Enabling packet capture on wlan0                                 |
+| **Hardware Security Tools**    | Flipper Zero (RFID/NFC/IR Tool) | Firmware 0.95+           | HID badge scanning, IR capture, replay attacks                   |
+|                                | HID 125 kHz Reader              | Standard                 | Reading low-frequency RFID card data (FC & Card ID)              |
+|                                | IR Transmitter / Receiver       | Built-in                 | Capturing and replaying remote-control signals                   |
+| **Documentation & Dev Tools**  | VS Code                         | Latest                   | Editing Suricata rules and writing reports                       |
+|                                | Nano                            | Built-in                 | CLI text editor for quick rule edits                             |
+|                                | Git & GitHub                    | Latest                   | Version control and report collaboration                         |
+| **Application Under Test**     | OWASP Juice Shop                | Latest Node.js build     | Target vulnerable web application for testing                    |
+
