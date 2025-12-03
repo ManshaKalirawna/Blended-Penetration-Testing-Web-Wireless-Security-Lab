@@ -559,8 +559,67 @@ API endpoints reject invalid or unauthenticated requests.
 
 Security documentation and password rotation procedures are established.
 ## 9. Conclusion & Recommendations
+## 9.1 Conclusion
 
-(Write later)
+The combined web, wireless, and hardware security assessment revealed that the target environment was vulnerable across multiple layers—application, network, and physical access.
+Critical issues such as SQL Injection, Broken Authentication, Open Redirects, weak WPA2 credentials, and easily cloneable RFID badges demonstrated that attackers could compromise the system using both digital and physical attack vectors.
+
+Through systematic testing using OWASP ZAP, Burp Suite, Wireshark, Suricata, RFID tools, and manual exploitation, the team identified weaknesses affecting confidentiality, integrity, and availability of the environment.
+
+Post-remediation validation showed significant improvements. SQLi and XSS payloads were blocked, admin access was hardened, API endpoints required authentication, WPA2 keys were strengthened, and RFID cloning attempts no longer succeeded. These results confirm that the applied fixes effectively mitigated the previously identified vulnerabilities.
+
+The assessment emphasizes the importance of continuous monitoring, timely patching, secure coding, strong authentication, and defense-in-depth strategies across all layers of the system.
+
+## 9.2 Recommendations
+
+To maintain a strong security posture and prevent regression, the following ongoing practices are recommended:
+
+1. Continuous Vulnerability Scanning
+
+Perform regular automated and manual web security scans (ZAP/Burp).
+
+Re-test after any major application update.
+
+2. Strengthen Access Controls
+
+Enforce strong password policies and MFA for all administrative accounts.
+
+Require unique credentials for each user and rotate them regularly.
+
+3. Secure Coding & Development Practices
+
+Implement input validation, output encoding, and secure frameworks.
+
+Adopt DevSecOps pipelines with SAST/DAST scanning integrated.
+
+4. Network Security Enhancements
+
+Maintain WPA3 or strong WPA2 passphrases.
+
+Segment networks to reduce lateral movement.
+
+Use monitoring tools to detect rogue access points.
+
+5. Improve Physical Security
+
+Replace low-frequency RFID cards with encrypted, challenge-response cards.
+
+Maintain logs for all badge access events.
+
+6. Deploy and Monitor IDS/IPS
+
+Keep Suricata rules updated.
+
+Continuously monitor alerts in eve.json, fast.log, and dashboards.
+
+Add custom signatures as new attack patterns emerge.
+
+7. Regular Security Training
+
+Educate employees about phishing, suspicious redirects, and rogue Wi-Fi networks.
+
+Conduct periodic awareness campaigns.
+
 ## 10. Appendix
 - Suricata rules  
 - Logs  
