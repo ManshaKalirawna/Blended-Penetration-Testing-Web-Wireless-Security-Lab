@@ -708,4 +708,35 @@ Card: 8792
 Badge Name: Cis_lab
 Status: Successfully Scanned
 - Screenshots  
-- Tool versions  
+- Tool versions
+  ## 10.2 Tools Used
+  Web Application Testing Tools
+Tool	Version	Purpose
+OWASP ZAP	2.14.0	Automated scanning, spidering, active vulnerability detection
+Burp Suite Community Edition	2023.12	Manual interception, modifying HTTP requests, replaying attacks
+Nikto Web Scanner	2.5.0	Server misconfiguration and outdated components scanning
+Curl	7.88.1	Direct API/manual request crafting
+Mozilla Firefox	120+	Browser used for test execution
+Operating Systems
+Operating System	Version	Purpose
+Kali Linux	2024.2	Main penetration testing environment (ZAP, Burp, Nikto, Suricata)
+Windows 10 Pro	22H2	Hosted Juice Shop web application
+Detection & IDS Tools
+Tool	Version	Purpose
+Suricata IDS	7.0.0	Custom rule creation, HTTP attack detection, alert logging
+Eve.json / Fast.log Outputs	Suricata default formats	Evidence of detected attacks
+Network & Wireless Tools
+Tool	Version	Purpose
+Wireshark	4.2.0	Packet capture, ARP analysis, WPA2 handshake capture
+Aircrack-ng Suite	1.7	Wireless monitoring & handshake cracking attempts
+Monitor Mode Drivers	Default Linux drivers	For packet capture on wlan0 interface
+Hardware Security Tools
+Tool	Version	Purpose
+Flipper Zero / RFID Tool	Firmware 0.95+	HID card scanning, NFC/IR capture, replay attacks
+125 kHz HID Reader Module	Standard LF reader	Extracting FC & Card ID from low-frequency badges
+IR Transmitter Module	Built-in (Flipper)	Capturing & replaying IR remote signals
+Other Tools & Utilities
+Tool / Utility	Purpose
+VS Code / Nano	Editing Suricata rules & report files
+Git / GitHub	Version control and group collaboration
+Node.js (Juice Shop)	Running the OWASP Juice Shop environment
