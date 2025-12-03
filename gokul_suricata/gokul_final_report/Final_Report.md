@@ -380,12 +380,73 @@ Alerts when JavaScript tags such as <script>alert('XSS')</script> appear in HTTP
 ## 7.Validation (Before & After Remediation)
 
 ### 7.1 Pre-Fix Scan Results
-(To be completed after Rahool submits vulnerabilities)
+Before any remediation was applied, multiple high-risk vulnerabilities were confirmed during penetration testing using tools such as OWASP ZAP, Burp Suite, Wireshark, and manual exploitation.
 
+#### Summary of Pre-Fix Findings:
+
+SQL Injection in login and search parameters allowed authentication bypass.
+
+Reflected XSS executed successfully in the search bar.
+
+Broken Authentication allowed login using default admin credentials.
+
+Open Redirect parameter (/redirect?to=) accepted arbitrary external URLs.
+
+Information Disclosure via unauthenticated /api/products endpoint.
+
+Weak WPA2 wireless password cracked via captured handshake.
+
+Low-frequency RFID badge cloneable using inexpensive tools.
+
+These results confirm that the system was vulnerable across web, wireless, and physical layers.
+
+Evidence (Tools Used):
+
+OWASP ZAP active scan alerts
+
+Burp Suite intercepted requests
+
+Wireshark ARP + WPA2 handshake capture
+
+RFID badge scan output
+
+(Screenshots already included in Section 3 & Section 5)
 ### 7.2 Post-Remediation Scan Results
-(To be completed after Nippun submits remediation steps)
+After remediation steps were applied by the team, the environment was re-tested to validate whether the vulnerabilities had been successfully mitigated.
 
----
+Expected Remediation Applied by Nippun (Section 8):
+
+SQL query handling updated to use parameterized statements
+
+Input sanitization and output encoding added to prevent XSS
+
+Default admin credentials removed; strong password policy enabled
+
+Redirect parameters restricted using allowlists
+
+Sensitive API endpoints now require authentication
+
+WPA2 wireless password upgraded to a strong PSK
+
+RFID/IR devices updated to secure formats (where possible)
+
+Post-Fix Validation Results:
+
+SQL Injection attempts no longer executed; application returned safe error messages.
+
+XSS payloads were sanitized and no alert box appeared.
+
+Admin login rejected default credentials.
+
+Open Redirect now blocks external URLs and displays a warning.
+
+API endpoints require an authenticated session.
+
+Wireless handshake attack failed due to strong passphrase.
+
+RFID clone attempt produced invalid results, indicating enhanced badge security.
+
+These results demonstrate that the remediation actions successfully mitigated the previously identified vulnerabilities.
 
 ## 8. Risk & Remediation (Nippun)
 (To be written after all parts are merged)
