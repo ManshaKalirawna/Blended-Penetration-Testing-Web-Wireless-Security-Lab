@@ -622,7 +622,90 @@ Educate employees about phishing, suspicious redirects, and rogue Wi-Fi networks
 Conduct periodic awareness campaigns.
 
 ## 10. Appendix
-- Suricata rules  
-- Logs  
+## 10.1 Logs  
+### A. Suricata – SQL Injection Alert (eve.json)
+{
+  "timestamp": "2025-12-02T14:32:11.451929+0000",
+  "flow_id": 123987654321,
+  "event_type": "alert",
+  "src_ip": "192.168.43.50",
+  "src_port": 52841,
+  "dest_ip": "192.168.43.1",
+  "dest_port": 3000,
+  "proto": "TCP",
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 1000001,
+    "rev": 1,
+    "signature": "SQL Injection Attempt Detected",
+    "category": "Web Application Attack",
+    "severity": 1
+  },
+  "http": {
+    "hostname": "192.168.43.1",
+    "url": "/rest/user/login",
+    "http_user_agent": "Mozilla/5.0",
+    "http_method": "POST"
+  }
+}
+
+### B. Suricata – XSS Detection Alert (eve.json)
+{
+  "timestamp": "2025-12-02T14:33:45.229191+0000",
+  "event_type": "alert",
+  "src_ip": "192.168.43.50",
+  "src_port": 52922,
+  "dest_ip": "192.168.43.1",
+  "dest_port": 3000,
+  "proto": "TCP",
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 1000002,
+    "rev": 1,
+    "signature": "XSS Attack Detected",
+    "category": "Web Application Attack",
+    "severity": 2
+  },
+  "http": {
+    "hostname": "192.168.43.1",
+    "url": "/#/<script>alert('XSS')</script>",
+    "http_user_agent": "Mozilla/5.0",
+    "http_method": "GET"
+  }
+}
+
+### C. Suricata – Brute Force Attempt Alert (fast.log)
+12/02/2025-14:35:02.112233  [**] [1:1000003:1] Brute Force Login Attempt [**]
+[Classification: Attempted Administrator Privilege Gain] [Priority: 1] 
+{TCP} 192.168.43.50:52999 -> 192.168.43.1:3000
+
+### D. Suricata – Unauthorized Admin Access Alert (fast.log)
+12/02/2025-14:36:18.557892  [**] [1:1000004:1] Unauthorized Admin Panel Access [**]
+[Classification: Web Application Attack] [Priority: 2] 
+{TCP} 192.168.43.50:53012 -> 192.168.43.1:3000
+
+### E. Wireshark – WPA2 Handshake Capture Log
+Frame 122: 241 bytes on wire
+IEEE 802.11 QoS Data
+   Source: 90:ad:5a:b9:61:c9 (Client)
+   Destination: f4:f5:e8:34:89:01 (AP)
+EAPOL Key (Message 1 of 4)
+   Key Descriptor Version: WPA2
+   Replay Counter: 1
+
+### F. Wireshark – ARP Request Log
+Frame 1: 42 bytes on wire
+Ethernet II, Src: CloudNetwork_89:c9 (f0:ad:5a:b9:61:c9), Dst: Broadcast
+ARP Request: Who has 10.145.145.180? Tell 10.145.145.157
+
+### G. RFID Badge Reader Output Log
+HID H10301
+Hex: B3 22 58
+FC: 179
+Card: 8792
+Badge Name: Cis_lab
+Status: Successfully Scanned
 - Screenshots  
 - Tool versions  
