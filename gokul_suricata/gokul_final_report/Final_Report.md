@@ -459,7 +459,105 @@ These results demonstrate that the remediation actions successfully mitigated th
 | **Weak WPA2 Passphrase**                   | High        | High           | Wi-Fi handshake could be cracked via dictionary attack.                                                 | Use strong PSK, rotate regularly, upgrade to WPA3.                  |
 | **Rogue Access Point (Evil Twin)**         | Medium      | Medium         | Fake APs can impersonate legitimate networks.                                                           | Enable WPA2-Enterprise (802.1X), WIDS/WIPS monitoring.              |
 | **RFID Badge Cloning**                     | Low–Medium  | Medium         | Low-frequency HID cards can be cloned easily.                                                           | Use encrypted RFID cards with challenge-response mechanisms.        |
+## 8.2 Detailed Remediation Steps
+### 8.2.1 SQL Injection
 
+Implement parameterized queries.
+
+Enforce server-side validation on all inputs.
+
+Use least-privilege accounts for DB access.
+
+Deploy WAF rules to detect injection payloads.
+
+### 8.2.2 Cross-Site Scripting (XSS)
+
+Apply output encoding based on rendering context.
+
+Implement strong Content Security Policy (CSP).
+
+Sanitize all user-controlled inputs.
+
+Avoid inline JavaScript.
+
+### 8.2.3 Broken Authentication
+
+Remove all default credentials.
+
+Enforce strong password policy (length + complexity).
+
+Enable MFA for admin accounts.
+
+Apply rate limiting on login attempts.
+
+### 8.2.4 Open Redirect
+
+Only permit redirects to trusted internal domains.
+
+Display warnings when redirecting to external URLs.
+
+Reject parameters containing "http://", "https://", or unapproved hosts.
+
+### 8.2.5 API Misconfiguration
+
+Protect all sensitive API endpoints with authentication.
+
+Disable debug and verbose error output.
+
+Regularly audit configuration files for insecure defaults.
+
+### 8.2.6 Wireless Security Fixes
+
+Upgrade WPA2 password to a strong passphrase (16+ characters).
+
+Segment networks (guest/user/admin) to reduce lateral movement.
+
+Upgrade to WPA3 where possible.
+
+### 8.2.7 Rogue AP Mitigation
+
+Implement WPA2-Enterprise (RADIUS/802.1X).
+
+Deploy Wireless Intrusion Detection/Prevention (WIDS/WIPS).
+
+Train users to avoid duplicate SSIDs.
+
+### 8.2.8 RFID / NFC / IR System Hardening
+
+Replace HID 10301 cards with encrypted high-security alternatives.
+
+Disable unnecessary IR/NFC features.
+
+Use rolling codes or challenge-response mechanisms.
+
+Maintain detailed access logs.
+
+### 8.3 Budget Estimate
+Category	Estimated Cost	Notes
+Web Application Fixes	$0 – $200	Developer time, CSP, validation logic.
+Wireless Hardening	$50 – $300	WPA3 access point, segmentation.
+Rogue AP Detection	$100 – $600	Optional WIDS/WIPS tools.
+RFID Security Upgrade	$20 – $100	New secure RFID cards/devices.
+Documentation / Verification	$0 – $150	Staff time to re-test and document.
+
+Total Estimated Cost Range: $200 – $2,000
+(depends on hardware upgrades and monitoring tools selected)
+### 8.4 Success Criteria
+The remediation will be considered successful when:
+
+All high-severity vulnerabilities (SQLi, Broken Authentication, WPA2 weakness) are fully fixed.
+
+Medium-severity issues show significant risk reduction.
+
+Re-testing confirms vulnerabilities no longer reproduce.
+
+Wireless network demonstrates increased resistance to cracking attacks.
+
+System detects rogue access points or unusual activity.
+
+API endpoints reject invalid or unauthenticated requests.
+
+Security documentation and password rotation procedures are established.
 ## 9. Conclusion & Recommendations
 
 (Write later)
