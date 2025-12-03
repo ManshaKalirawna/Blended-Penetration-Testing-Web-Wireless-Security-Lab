@@ -449,9 +449,17 @@ RFID clone attempt produced invalid results, indicating enhanced badge security.
 These results demonstrate that the remediation actions successfully mitigated the previously identified vulnerabilities.
 
 ## 8. Risk & Remediation (Nippun)
-(To be written after all parts are merged)
+| **Risk**                                   | **Impact**  | **Likelihood** | **Description**                                                                                         | **Remediation Summary**                                             |
+| ------------------------------------------ | ----------- | -------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| **SQL Injection**                          | High        | High           | Unsanitized input allowed SQL queries to run on the backend, enabling login bypass and data extraction. | Use parameterized queries, validate inputs, restrict DB privileges. |
+| **Cross-Site Scripting (XSS)**             | Medium–High | Medium         | Unsanitized user input allowed execution of malicious JavaScript.                                       | Add HTML/JS encoding, sanitize inputs, apply CSP.                   |
+| **Broken Authentication**                  | High        | High           | Default admin credentials allowed full admin access.                                                    | Enforce strong password policies, MFA, disable default accounts.    |
+| **Open Redirect**                          | Medium      | Medium         | Redirect parameter accepted arbitrary URLs.                                                             | Only allow internal redirect destinations (allowlist).              |
+| **API Misconfiguration / Info Disclosure** | Medium      | Medium         | /api/products and debug endpoints exposed sensitive data.                                               | Add authentication to all APIs, disable debug mode.                 |
+| **Weak WPA2 Passphrase**                   | High        | High           | Wi-Fi handshake could be cracked via dictionary attack.                                                 | Use strong PSK, rotate regularly, upgrade to WPA3.                  |
+| **Rogue Access Point (Evil Twin)**         | Medium      | Medium         | Fake APs can impersonate legitimate networks.                                                           | Enable WPA2-Enterprise (802.1X), WIDS/WIPS monitoring.              |
+| **RFID Badge Cloning**                     | Low–Medium  | Medium         | Low-frequency HID cards can be cloned easily.                                                           | Use encrypted RFID cards with challenge-response mechanisms.        |
 
----
 ## 9. Conclusion & Recommendations
 
 (Write later)
