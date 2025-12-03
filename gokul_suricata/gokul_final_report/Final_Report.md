@@ -29,7 +29,7 @@ Overall, the application is highly vulnerable and susceptible to common web atta
 ## 2. Scope & Methodology
 This part of the project focuses on evaluating the security posture of the OWASP Juice Shop application. My role in the group was specifically the web application testing portion, so all the work in this section reflects the tests I personally carried out using Kali Linux and Windows as needed.
 
-2.1 Scope of Testing
+### 2.1 Scope of Testing
 
 The scope included the following:
 
@@ -53,7 +53,7 @@ Database-level exploitation beyond what the Juice Shop environment intentionally
 
 Anything impacting other machines on the network (only my local isolated setup was used)
 
-2.2 Testing Approach & Methodology
+### 2.2 Testing Approach & Methodology
 
 I followed a fairly standard workflow similar to what you’d see in a junior penetration testing engagement. Here's the high‑level process I used:
 
@@ -105,7 +105,7 @@ Any sensitive information I managed to access
 
 All screenshots are included inside each vulnerability write‑up and stored neatly in the /evidence/ folder for organized version control.
 
-2.3 Tools Used
+### 2.3 Tools Used
 
 Kali Linux
 
@@ -119,7 +119,7 @@ Curl (for direct requests)
 
 Windows 10 (hosting Juice Shop instance)
 
-2.4 Deliverables From My Part
+### 2.4 Deliverables From My Part
 
 As the student responsible for the Web Application portion, my final deliverables include:
 
@@ -133,11 +133,11 @@ Clean GitHub repository for the group to add to later
 
 ## 3. Web Application Testing Results (Rahool)
 Findings Summary Table
-3.1 Overview
+### 3.1 Overview
 
 In this section, I summarize the main vulnerabilities I discovered while testing the OWASP Juice Shop web application. Each finding is listed with its impact, risk level, and brief description. Detailed explanations, step-by-step reproduction, and screenshots are included in the next section (Detailed Vulnerability Write-Up).
 
-3.2 Findings Summary Table
+### 3.2 Findings Summary Table
 | # | Vulnerability                           | Category                  | Risk Level | Brief Description                                                                                         |
 | - | --------------------------------------- | ------------------------- | ---------- | --------------------------------------------------------------------------------------------------------- |
 | 1 | SQL Injection                           | Injection                 | High       | Input fields in search and login forms were vulnerable to SQL queries, allowing unauthorized data access. |
@@ -149,7 +149,7 @@ In this section, I summarize the main vulnerabilities I discovered while testing
 
 Note: Risk levels were determined based on impact on confidentiality, integrity, and availability of the web application.
 
-3.3 Notes
+### 3.3 Notes
 
 1. This table provides a high-level view of vulnerabilities.
 
@@ -158,7 +158,7 @@ Note: Risk levels were determined based on impact on confidentiality, integrity,
 3. Risk levels are relative to the Juice Shop instance running in a controlled, lab environment.
 
 ## 4.  Detailed Vulnerability Write-Up (Rahool)
-4.1 SQL Injection (High Severity) Overview
+### 4.1 SQL Injection (High Severity) Overview
 
 During testing, I found that several user-input fields—particularly the search bar and the login form—did not properly validate or sanitize user-supplied data. This allowed me to inject SQL queries into the backend database.
 
@@ -184,7 +184,7 @@ Risk of full database compromise
 <img width="1285" height="763" alt="image" src="https://github.com/user-attachments/assets/e888c519-7a30-4a73-870d-1909ceee70ed" />
 
 <img width="1279" height="769" alt="image" src="https://github.com/user-attachments/assets/02a91263-7d4a-4df0-8489-eb23f20cccbe" />
-4.2 Broken Authentication – Weak Default Password (High Severity) Overview
+### 4.2 Broken Authentication – Weak Default Password (High Severity) Overview
 
 The administrator account still used its default credentials. I could log in as the admin using these default passwords.
 
@@ -206,7 +206,7 @@ Administrative access exposes all sensitive data
 
 <img width="1279" height="730" alt="image" src="https://github.com/user-attachments/assets/58cc677d-559c-4026-a128-714dc4259ecb" />
 
-4.3 Cross-Site Scripting (XSS) – Reflected (Medium Severity) Overview
+### 4.3 Cross-Site Scripting (XSS) – Reflected (Medium Severity) Overview
 
 Reflected XSS was discovered in the search bar and other fields where input is reflected back without proper sanitization.
 
@@ -225,7 +225,7 @@ Redirection to malicious websites
 
 Evidence
 <img width="1279" height="790" alt="image" src="https://github.com/user-attachments/assets/52f55182-0dcc-4f46-81e8-45cf8f3bfe21" />
-4.4 Open Redirect (Medium Severity) Overview
+### 4.4 Open Redirect (Medium Severity) Overview
 
 Users could be redirected to arbitrary external sites via URL parameters.
 
@@ -246,7 +246,7 @@ Evidence
 <img width="1915" height="1030" alt="image" src="https://github.com/user-attachments/assets/b59a965d-2a47-4992-b7c0-18027908c5dd" />
 
 <img width="1885" height="1019" alt="image" src="https://github.com/user-attachments/assets/1634d558-37ba-4c6b-b096-6feadc719028" />
-4.5 Security Misconfiguration – Exposed API / Debug Info (Medium Severity) Overview
+### 4.5 Security Misconfiguration – Exposed API / Debug Info (Medium Severity) Overview
 
 Accessible directories and endpoints exposed information about the application and products without authentication.
 
@@ -263,7 +263,7 @@ Information disclosure increases attack surface
 Could help attackers craft further attacks
 
 <img width="1175" height="645" alt="image" src="https://github.com/user-attachments/assets/dbec7ddb-c1c7-4e02-8791-1573faacca3b" />
-4.6 Input Validation Issues (Low Severity) Overview
+### 4.6 Input Validation Issues (Low Severity) Overview
 
 During testing, I observed that several input fields, particularly the search bar, accepted unusual and unexpected characters without proper validation. While the application correctly displayed "No results found" when the input did not match any products, it still echoed the entire user input on the page. This behavior indicates weak input validation.
 
