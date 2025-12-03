@@ -292,9 +292,10 @@ Demonstrates a minor security misconfiguration in input handling.<img width="190
 
 During the wireless assessment, a WPA2 4-way handshake was successfully captured using monitor mode on Kali Linux.
 This handshake can later be cracked offline to identify weak pre-shared keys.
-<img width="1600" height="1066" alt="image" src="evidence/Wireshark.jpg" />
+<img width="1600" height="1066" alt="image" src="https://github.com/ManshaKalirawna/Blended-Penetration-Testing-Web-Wireless-Security-Lab/blob/f14985526c464cb582e90332de8e0be6818a2697/evidence/Wireshark.jpg" />
 The packet capture shows ARP broadcasts and management frames from the lab wireless network.
 The handshake confirms that the target WiFi network was in range and that packets were successfully captured for further cracking analysis.
+<img width="1600" height="1066" alt="image" src="https://github.com/ManshaKalirawna/Blended-Penetration-Testing-Web-Wireless-Security-Lab/blob/f14985526c464cb582e90332de8e0be6818a2697/evidence/Wireshark_2.jpg" />
 ### 5.2 RFID Badge Cloning
 
 As part of the hardware security evaluation, an HID access card was scanned.
