@@ -310,6 +310,7 @@ This demonstrates the insecure use of non-encrypted RFID tags within the environ
 
 ###5.4 IR / NFC / Remote Replay Attack
 The hardware tool was able to list the device and capture IR remote signals.
+
 <img width="512" height="256" alt="image" src="https://github.com/user-attachments/assets/e3676552-1222-4396-a614-aacfad8abf4d" />
 
 <img width="256" height="512" alt="image" src="https://github.com/user-attachments/assets/9bb59c46-65af-4c1f-92ff-80ad7bea759a" />
