@@ -288,8 +288,21 @@ Could increase the likelihood of future injection or XSS vulnerabilities if othe
 Demonstrates a minor security misconfiguration in input handling.<img width="1909" height="1001" alt="image" src="https://github.com/user-attachments/assets/43879258-3db4-4b07-be82-363712c72cf1" />
 
 ## 5. Wireless & Hardware Testing ( Rahool)
-
-
+###5.1 WiFi Handshake Capture
+During the wireless assessment, a WPA2 4-way handshake was successfully captured using monitor mode on Kali Linux.
+This handshake can later be cracked offline to identify weak pre-shared keys.
+<img width="1600" height="1066" alt="image" src="https://github.com/user-attachments/assets/15b68119-85dd-4cfa-9a95-e447326f6c5c" />
+The packet capture shows ARP broadcasts and management frames from the lab wireless network.
+The handshake confirms that the target WiFi network was in range and that packets were successfully captured for further cracking analysis.
+###5.2 RFID Badge Cloning
+As part of the hardware security evaluation, an HID access card was scanned.
+The card uses HID H10301 format, which is known to be clonable using inexpensive RFID tools.
+<img width="512" height="256" alt="image" src="https://github.com/user-attachments/assets/18848134-5408-4626-a886-61def3eaa0f7" />
+To demonstrate that low-frequency HID cards can be scanned and their data extracted, highlighting vulnerabilities to badge cloning and replay attacks.
+###5.3 NFC / IR Remote Capture
+<img width="512" height="256" alt="image" src="https://github.com/user-attachments/assets/362e6528-8e63-4862-8afe-9ec752edbf7b" />
+The captured output confirms the badge identity (“Cis_lab”) and full tag attributes.
+This demonstrates the insecure use of non-encrypted RFID tags within the environment.
 
 ## 6. Detection & Suricata Rule Implementation (Gokulhesh)
 ### 6.1 Overview
