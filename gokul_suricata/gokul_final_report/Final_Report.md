@@ -331,6 +331,7 @@ This section documents the custom Suricata IDS rules created to detect the major
 All rules were tested using Suricata on Kali Linux, and alerts were verified in Eve.json, fast.log, and Suricata’s real-time console output.
 
 ### 6.2 Custom Detection Rules
+## Rule 1 — SQL Injection Detection
 alert http any any -> any any (
     msg:"SQL Injection Attempt Detected";
     content:"' OR 1=1";
@@ -338,6 +339,39 @@ alert http any any -> any any (
     sid:1000001;
     rev:1;
 )
+## Rule 2 — Cross-Site Scripting (XSS) Detection
+alert http any any -> any any (
+    msg:"XSS Attack Detected";
+    flow:to_server,established;
+    content:"<script>";
+    nocase;
+    http_client_body;
+    classtype:web-application-attack;
+    sid:1000002;
+    rev:1;
+)
+## Rule 3 — Brute-Force Login Attempt
+alert http any any -> any any (
+    msg:"Brute Force Login Attempt";
+    flow:to_server,established;
+    content:"/rest/user/login";
+    http_uri;
+    threshold:type both, track by_src, count 5, seconds 60;
+    classtype:attempted-admin;
+    sid:1000003;
+    rev:1;
+)
+## Rule 4 — Unauthorized Admin Panel Access
+alert http any any -> any any (
+    msg:"Unauthorized Admin Panel Access";
+    flow:to_server,established;
+    content:"/admin";
+    http_uri;
+    classtype:web-application-attack;
+    sid:1000004;
+    rev:1;
+)
+
 What it detects:
 Alerts when JavaScript tags such as <script>alert('XSS')</script> appear in HTTP traffic. 
 
