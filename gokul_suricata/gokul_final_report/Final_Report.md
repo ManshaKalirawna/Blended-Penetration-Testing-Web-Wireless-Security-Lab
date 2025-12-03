@@ -297,12 +297,26 @@ The handshake confirms that the target WiFi network was in range and that packet
 ###5.2 RFID Badge Cloning
 As part of the hardware security evaluation, an HID access card was scanned.
 The card uses HID H10301 format, which is known to be clonable using inexpensive RFID tools.
+
 <img width="512" height="256" alt="image" src="https://github.com/user-attachments/assets/18848134-5408-4626-a886-61def3eaa0f7" />
+
 To demonstrate that low-frequency HID cards can be scanned and their data extracted, highlighting vulnerabilities to badge cloning and replay attacks.
+
 ###5.3 NFC / IR Remote Capture
 <img width="512" height="256" alt="image" src="https://github.com/user-attachments/assets/362e6528-8e63-4862-8afe-9ec752edbf7b" />
+
 The captured output confirms the badge identity (“Cis_lab”) and full tag attributes.
 This demonstrates the insecure use of non-encrypted RFID tags within the environment.
+
+###5.4 IR / NFC / Remote Replay Attack
+The hardware tool was able to list the device and capture IR remote signals.
+<img width="512" height="256" alt="image" src="https://github.com/user-attachments/assets/e3676552-1222-4396-a614-aacfad8abf4d" />
+
+<img width="256" height="512" alt="image" src="https://github.com/user-attachments/assets/9bb59c46-65af-4c1f-92ff-80ad7bea759a" />
+
+Attackers can intercept IR/NFC input and replay commands, allowing unauthorized control of TVs, projectors, or digital signage systems.
+
+This demonstrates a real-world IR replay attack, showing exploitation of insecure remote-controlled hardware.
 
 ## 6. Detection & Suricata Rule Implementation (Gokulhesh)
 ### 6.1 Overview
