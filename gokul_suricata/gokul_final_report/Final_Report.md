@@ -409,6 +409,7 @@ Burp Suite intercepted requests
 Wireshark ARP + WPA2 handshake capture
 
 RFID badge scan output
+<img width="1600" height="777" alt="image" src="https://github.com/user-attachments/assets/fea3abf6-3c8e-4202-a3b6-805330ecad05" />
 
 (Screenshots already included in Section 3 & Section 5)
 ### 7.2 Post-Remediation Scan Results
