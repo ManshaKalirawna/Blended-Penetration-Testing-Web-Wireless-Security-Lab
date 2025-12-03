@@ -12,6 +12,10 @@ In this section, I summarize the main vulnerabilities I discovered while testing
 | 4 | Open Redirect                           | Unvalidated Redirects     | Medium     | Users could be redirected to arbitrary external sites via URL parameters.                                 |
 | 5 | Security Misconfiguration / Exposed API | Security Misconfiguration | Medium     | Public API endpoint returned sensitive product data without authentication.                               |
 | 6 | Optional / Bonus Findings               | Miscellaneous             | Low        | Minor headers missing, outdated allowlists, or other low-risk issues.                                     |
+| 7	|Weak WPA2 Passphrase on Lab SSID (CIS145-LAB)|	Wireless Configuration|	High	|The lab Wi Fi network used a short numeric pre shared key that was quickly recovered from an offline dictionary attack after a WPA2 handshake capture.|
+| 8	|Rogue Access Point (Evil Twin) | Risk	Wireless / Network|	Medium |	A cloned access point broadcast the same SSID as the real lab network, potentially tricking clients into connecting to a malicious AP that can intercept or manipulate traffic.|
+| 9 |Insecure RFID and IR Replay Demonstrations	| Hardware / Physical Security |	Low	| Lab tests showed that basic RFID/NFC tags and infrared remote signals can be cloned or replayed against devices that lack encryption or authentication.|
+
 
 Note: Risk levels were determined based on impact on confidentiality, integrity, and availability of the web application.
 
