@@ -375,8 +375,7 @@ alert http any any -> any any (
 What it detects:
 Alerts when JavaScript tags such as <script>alert('XSS')</script> appear in HTTP traffic. 
 
-### 6.3 Evidence Screenshots
-(To be added after testing the rules)
+
 
 ## 7.Validation (Before & After Remediation)
 
